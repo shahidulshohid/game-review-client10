@@ -15,7 +15,8 @@ const router = createBrowserRouter([
         children:[
             {
                 path:'/',
-                element:<HomePage></HomePage>
+                element:<HomePage></HomePage>,
+                loader: ()=> fetch('http://localhost:8000/addReviews')
             },
             {
                 path:'/allReviews',
