@@ -1,64 +1,130 @@
+import { useContext, useState } from "react";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { Link, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
+import { toast } from "react-toastify";
 
 const Register = () => {
-    return (
-        <div className="min-h-screen flex justify-center items-center">
-      <div className="card bg-base-300 w-full max-w-lg shrink-0 p-4">
-        <h2 className="text-3xl font-semibold text-center">
-          Login your account
-        </h2>
+  const navigate = useNavigate();
+  const { handleRegister, manageProfile, setUser } = useContext(AuthContext);
+  const [showPassword, setShowPassword] = useState(false);
+
+  // handle register
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const name = e.target.name.value;
+    const photo = e.target.photo.value;
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+
+    const regex = /^(?=.*[a-z])(?=.*[A-Z]).+$/;
+
+    if (!regex.test(password)) {
+      toast.error(
+        "Must have a Uppercase and Lowercase letter in the password  ",
+        {
+          position: "top-center",
+        }
+      );
+      return;
+    }
+
+    if (password.length < 6) {
+      toast.error("Length must be at least 6 character", {
+        position: "top-center",
+      });
+      return;
+    }
+
+    handleRegister(email, password).then((res) => {
+      console.log(res.user);
+      manageProfile(name, photo);
+      setUser({ displayName: name, photoURL: photo, email: email });
+      toast.success("Register is successfully", {
+        position: "top-center",
+      });
+      navigate("/");
+    });
+  };
+
+  return (
+    <div className="min-h-screen flex justify-center items-center mt-6">
+      <div className="card bg-base-100 w-full max-w-lg shrink-0 shadow-2xl">
         <form onSubmit={handleSubmit} className="card-body">
+          <h3 className="text-center text-2xl font-bold">
+            Register Your Account
+          </h3>
           <div className="form-control">
             <label className="label">
-              <span className="label-text">Email</span>
+              <span className="label-text">Name</span>
             </label>
             <input
-              type="email" ref={emailRef}
-              name="email"
-              placeholder="email"
+              type="text"
+              name="name"
+              placeholder="name"
               className="input input-bordered"
               required
             />
           </div>
           <div className="form-control">
             <label className="label">
+              <span className="label-text">Photo URL</span>
+            </label>
+            <input
+              type="text"
+              name="photo"
+              placeholder="photo-url"
+              className="input input-bordered"
+              required
+            />
+          </div>
+          <div className="form-control">
+            <label className="label">
+              <span className="label-text">Email</span>
+            </label>
+            <input
+              type="email"
+              name="email"
+              placeholder="email"
+              className="input input-bordered"
+              required
+            />
+          </div>
+          <div className="form-control relative">
+            <label className="label">
               <span className="label-text">Password</span>
             </label>
             <input
-              type="password"
+              type={showPassword ? "text" : "password"}
               name="password"
               placeholder="password"
-              className="input input-bordered "
+              className="input input-bordered"
               required
             />
-            <label onClick={handleForgetPassword} className="label">
-              <a href="#" className="label-text-alt link link-hover">
-                Forgot password?
-              </a>
-            </label>
+
+            <span
+              onClick={() => setShowPassword(!showPassword)}
+              className="btn btn-xs absolute right-5 top-12"
+            >
+              {showPassword ? <FaEyeSlash /> : <FaEye />}
+            </span>
           </div>
-          <div className="form-control mt-6">
-            <button className="btn btn-primary text-xl font-semibold">
-              Login
+          <div className="form-control mt-4 -mb-8">
+            <button className="btn border border-secondary bg-transparent text-secondary hover:bg-secondary hover:text-white text-lg">
+              Register
             </button>
           </div>
         </form>
-        <div className="text-left pl-7 -mt-6">
-          <button
-            className="btn bg-secondary text-white hover:text-secondary text-lg"
-            // onClick={handleGoogleLoginHandler}
-          >
-            Logon with Google
-          </button>
-        </div>
-        <p className="text-center font-semibold">
-          Don't have an account please ?{" "}
-          <Link to="/register" className="text-red-500">
-            Register
+        <p className="text-center font-semibold my-3">
+          Already Have an account ?{" "}
+          <Link className="text-red-500" to="/login">
+            Login
           </Link>
         </p>
       </div>
     </div>
-    );
+  );
 };
 
 export default Register;
