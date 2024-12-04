@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import Swal from 'sweetalert2'
 
 const AddReviewsPage = () => {
   const { user } = useContext(AuthContext);
@@ -15,12 +16,27 @@ const AddReviewsPage = () => {
     const genres = form.genres.value
     const email = form.email.value 
     const userName = form.userName.value 
-    console.log(photo, title, description, rating, sal, genres, email, userName)
+    const AddReviewData = {photo, title, description, rating, sal, genres, email, userName}
 
-    console.log(typeof rating)
-    console.log(typeof sal)
-
-
+    // send to the server 
+    fetch('http://localhost:8000/addReviews', {
+      method:'POST',
+      headers: {
+        'content-type' : 'application/json'
+      },
+      body:JSON.stringify(AddReviewData)
+    })
+    .then(res => res.json())
+    .then(data => {
+      if(data.insertedId){
+        Swal.fire({
+          title: 'Add Reviews Successfully!',
+          text: 'Do you want to continue',
+          icon: 'success',
+          confirmButtonText: 'Yes'
+        })
+      }
+    })
   }
     return (
         <div>
