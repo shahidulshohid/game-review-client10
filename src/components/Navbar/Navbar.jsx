@@ -1,10 +1,10 @@
 
-import { useContext } from "react";
+// import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 const Navbar = () => {
-    const { handleGoogleLogin } = useContext(AuthContext);
+    // const { handleGoogleLogin } = useContext(AuthContext);
   const links = (
     <>
       <li className="text-lg font-semibold mx-2 mt-2">
@@ -66,7 +66,7 @@ const Navbar = () => {
                 <img src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp" />
               </div>
             </div>
-            <Link onClick={handleGoogleLogin}
+            <Link
               className="text-sm md:text-lg font-semibold border-2 border-green-500 p-2 rounded-lg"
               to="/login"
             >
