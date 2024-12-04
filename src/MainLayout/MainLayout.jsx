@@ -3,7 +3,7 @@ import Navbar from "../components/Navbar/Navbar"
 
 const MainLayout = () => {
     return (
-        <div>
+        <div className=" dark:bg-gray-900">
             <Navbar></Navbar>
             <div className="w-11/12 mx-auto">
             <Outlet></Outlet>

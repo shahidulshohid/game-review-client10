@@ -1,9 +1,23 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
+import { CiLight, CiDark } from "react-icons/ci";
 
 const Navbar = () => {
   const { user, handleLogout } = useContext(AuthContext);
+  const [theme, setTheme] = useState("light")
+  useEffect(()=>{
+    if(theme === "dark"){
+      document.documentElement.classList.add("dark")
+    }else{
+      document.documentElement.classList.remove("dark")
+    }
+  }, [theme])
+
+  const handleThemeSwitch = () => {
+    setTheme(theme === "dark" ? "light" : "dark")
+  }
+
   const links = (
     <>
       <li className="text-lg font-semibold mx-2 mt-2">
@@ -59,14 +73,22 @@ const Navbar = () => {
             className="text-lg md:text-2xl font-semibold md:font-bold"
             to="/"
           >
-            Game Review
+            <div className="md:flex">
+            <p className="md:mr-2">Game</p>
+            <p>Review</p>
+            </div>
           </Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">{links}</ul>
         </div>
         <div className="navbar-end">
-          <div className="flex gap-2 ">
+          <div className="flex gap-2 items-center">
+            <button className="bg-gray-300 w-8 h-8 md:w-10 md:h-10 flex justify-center items-center rounded-full" onClick={handleThemeSwitch}>
+            {
+              theme === "dark" ? <p ><CiDark size={25}/></p> : <p><CiLight size={30}/></p>
+            }
+            </button>
             <div className="avatar">
               <div
                 title={user?.displayName}
