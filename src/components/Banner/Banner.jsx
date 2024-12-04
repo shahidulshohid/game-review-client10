@@ -109,7 +109,7 @@ const Banner = () => {
               backgroundRepeat: "no-repeat",
             }}
           >
-            <div className="border border-orange-600 rounded-xl bg-base-100">
+            <div className="border border-orange-600 rounded-xl bg-base-100 z-0">
             <div className="m-3 max-w-lg p-4 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-xl">
               <h3 className="text-white text-2xl md:text-4xl font-bold text-center">
                 Play with anyone, anywhere, on any device.

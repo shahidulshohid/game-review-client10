@@ -27,7 +27,7 @@ const Navbar = () => {
     <div className="w-11/12 mx-auto z-50">
       <div className="navbar bg-base-100">
         <div className="navbar-start">
-          <div className="dropdown">
+          <div className="dropdown z-50">
             <div
               tabIndex={0}
               role="button"
