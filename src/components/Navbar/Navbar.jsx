@@ -2,21 +2,22 @@ import { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { CiLight, CiDark } from "react-icons/ci";
+import logo from '../../assets/logo.jpg'
 
 const Navbar = () => {
   const { user, handleLogout } = useContext(AuthContext);
-  const [theme, setTheme] = useState("light")
-  useEffect(()=>{
-    if(theme === "dark"){
-      document.documentElement.classList.add("dark")
-    }else{
-      document.documentElement.classList.remove("dark")
+  const [theme, setTheme] = useState("light");
+  useEffect(() => {
+    if (theme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
     }
-  }, [theme])
+  }, [theme]);
 
   const handleThemeSwitch = () => {
-    setTheme(theme === "dark" ? "light" : "dark")
-  }
+    setTheme(theme === "dark" ? "light" : "dark");
+  };
 
   const links = (
     <>
@@ -38,7 +39,7 @@ const Navbar = () => {
     </>
   );
   return (
-    <div className="w-11/12 mx-auto z-50 sticky top-0">
+    <div className="w-11/12 mx-auto mt-2 z-50 sticky top-0">
       <div className="navbar bg-base-100">
         <div className="navbar-start">
           <div className="dropdown z-50">
@@ -73,9 +74,8 @@ const Navbar = () => {
             className="text-lg md:text-2xl font-semibold md:font-bold"
             to="/"
           >
-            <div className="flex items-center">
-            <p className="text-3xl text-pink-500 font-bold">G</p>
-            <p>review</p>
+            <div>
+              <img className="w-10 h-10 md:w-12 md:h-12 rounded-full" src={logo} alt="logo" />
             </div>
           </Link>
         </div>
@@ -84,23 +84,35 @@ const Navbar = () => {
         </div>
         <div className="navbar-end">
           <div className="flex gap-2 items-center">
-            <button className="bg-gray-300 w-8 h-8 md:w-10 md:h-10 flex justify-center items-center rounded-full" onClick={handleThemeSwitch}>
-            {
-              theme === "dark" ? <p ><CiDark size={25}/></p> : <p><CiLight size={30}/></p>
-            }
+            <button
+              className="bg-gray-300 w-8 h-8 md:w-10 md:h-10 flex justify-center items-center rounded-full"
+              onClick={handleThemeSwitch}
+            >
+              {theme === "dark" ? (
+                <p>
+                  <CiDark size={25} />
+                </p>
+              ) : (
+                <p>
+                  <CiLight size={30} />
+                </p>
+              )}
             </button>
             <div className="avatar">
               <div
                 title={user?.displayName}
                 className="w-10 md:w-12 rounded-full"
               >
-                {
-                  user && <img src={user?.photoURL} />
-                }
+                {user && <img src={user?.photoURL} />}
               </div>
             </div>
             {user ? (
-              <NavLink onClick={handleLogout} className="text-sm md:text-lg font-semibold border-2 border-green-500 p-2 rounded-lg">LogOut</NavLink>
+              <NavLink
+                onClick={handleLogout}
+                className="text-sm md:text-lg font-semibold border-2 border-green-500 p-2 rounded-lg"
+              >
+                LogOut
+              </NavLink>
             ) : (
               <div className="flex gap-2">
                 <Link

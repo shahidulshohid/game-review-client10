@@ -50,7 +50,7 @@ const ReviewDetailsPage = () => {
                 userName && <h4 className="text-xl my-1 font-semibold">UserName: {userName}</h4> 
             }
             {
-                email && <p className="text-sm mb-2">Email: {email}</p>
+                email && <p className="text-sm mb-2">Viewers Email: {email}</p>
             }
           </div>
         </div>
