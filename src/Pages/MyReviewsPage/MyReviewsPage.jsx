@@ -14,20 +14,18 @@ const MyReviewsPage = () => {
     setMyReviewsData(matchEmailData);
   }, [data]);
 
-  console.log(myReviewsData);
   return (
-    <div className="bg-slate-50 my-12 py-6">
-      <div className="overflow-x-auto">
+    <div className="bg-[#F4F3F0] rounded-xl my-12 py-6">
+      <div className="overflow-x-auto ">
         <table className="table">
           {/* head */}
           <thead>
             <tr>
-              <th>Photo</th>
-              <th>Title</th>
-              <th>Genres</th>
-              <th>Rating</th>
-              <th>Email</th>
-              <th>Action</th>
+              <th className="text-black text-lg">Photo</th>
+              <th className="text-black text-lg">Title</th>
+              <th className="text-black text-lg hidden lg:flex">Email</th>
+              <th className="text-black text-lg">Rating</th>
+              <th className="text-black text-lg">Action</th>
             </tr>
           </thead>
           <tbody>
