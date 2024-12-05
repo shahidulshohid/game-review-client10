@@ -44,8 +44,8 @@ const AddReviewsPage = () => {
         <h2 className="text-3xl text-center font-bold">Add New Review</h2>
         <form onSubmit={handleAddReview}>
             {/* first row */}
-          <div className="flex gap-6 ">
-            <div className="form-control md:w-1/2">
+          <div className="md:flex gap-6">
+            <div className="form-control w-full md:w-1/2">
               <label className="label">
                 <span className="label-text font-bold">Photo URL</span>
               </label>
@@ -57,7 +57,7 @@ const AddReviewsPage = () => {
                 required
               />
             </div>
-            <div className="form-control md:w-1/2">
+            <div className="form-control w-full md:w-1/2">
               <label className="label">
                 <span className="label-text font-bold">Game Title</span>
               </label>
@@ -71,8 +71,8 @@ const AddReviewsPage = () => {
             </div>
           </div>
           {/* second row  */}
-          <div className="flex gap-6 ">
-            <div className="form-control md:w-1/2">
+          <div className="md:flex gap-6 ">
+            <div className="form-control w-full md:w-1/2">
               <label className="label">
                 <span className="label-text font-bold">Review Description</span>
               </label>
@@ -84,7 +84,7 @@ const AddReviewsPage = () => {
                 required
               />
             </div>
-            <div className="form-control md:w-1/2">
+            <div className="form-control w-full md:w-1/2">
             <label className="label">
                 <span className="label-text font-bold">Rating</span>
               </label>
@@ -103,9 +103,8 @@ const AddReviewsPage = () => {
             </div>
           </div>
           {/* third row  */}
-          <div className="flex gap-6 ">
-            
-          <div className="form-control md:w-1/2">
+          <div className="md:flex gap-6 ">
+          <div className="form-control w-full md:w-1/2">
               <label className="label">
                 <span className="label-text font-bold">Publishing year</span>
               </label>
@@ -122,7 +121,7 @@ const AddReviewsPage = () => {
                 <option value="2024">2024</option>
               </select>
             </div>
-            <div className="form-control md:w-1/2">
+            <div className="form-control w-full md:w-1/2">
               <label className="label">
                 <span className="label-text font-bold">Genres</span>
               </label>
@@ -141,8 +140,8 @@ const AddReviewsPage = () => {
             </div>
           </div>
           {/* fourth row */}
-          <div className="flex gap-6 ">
-            <div className="form-control md:w-1/2">
+          <div className="md:flex gap-6 ">
+            <div className="form-control w-full md:w-1/2">
               <label className="label">
                 <span className="label-text font-bold">Email</span>
               </label>
@@ -155,7 +154,7 @@ const AddReviewsPage = () => {
                 required
               />
             </div>
-            <div className="form-control md:w-1/2">
+            <div className="form-control w-full md:w-1/2">
               <label className="label">
                 <span className="label-text font-bold">User Name</span>
               </label>

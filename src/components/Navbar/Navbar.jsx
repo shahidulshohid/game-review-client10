@@ -33,7 +33,7 @@ const Navbar = () => {
         <NavLink to="/myReviews">My Reviews</NavLink>
       </li>
       <li className="text-lg font-semibold mx-2 mt-2">
-        <NavLink to="/gameWatchList">Game WatchList</NavLink>
+        <NavLink to="/gameWatchList">My WatchList</NavLink>
       </li>
     </>
   );
