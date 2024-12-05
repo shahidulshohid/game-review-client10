@@ -40,7 +40,7 @@ const AddReviewsPage = () => {
   }
     return (
         <div>
-      <div className="bg-[#F4F3F0] p-6 lg:p-12 my-12">
+      <div className="bg-[#F4F3F0] p-6 lg:p-12 my-12 rounded-xl">
         <h2 className="text-3xl text-center font-bold">Add New Review</h2>
         <form onSubmit={handleAddReview}>
             {/* first row */}
