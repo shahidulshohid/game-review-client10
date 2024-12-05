@@ -30,7 +30,7 @@ const router = createBrowserRouter([
             {
                 path:'/allReviews',
                 element:<ALLReviewsPage></ALLReviewsPage>,
-                loader: ()=> fetch('http://localhost:8000/addReviews')
+                loader: ()=> fetch('http://localhost:8000/allReviews')
             },
             {
                 path:'/addReviews',
@@ -38,7 +38,8 @@ const router = createBrowserRouter([
             },
             {
                 path:'/myReviews',
-                element:<PrivateRoute><MyReviewsPage></MyReviewsPage></PrivateRoute>
+                element:<PrivateRoute><MyReviewsPage></MyReviewsPage></PrivateRoute>,
+                loader: ()=> fetch('http://localhost:8000/allReviews')
             },
             {
                 path:'/gameWatchList',
