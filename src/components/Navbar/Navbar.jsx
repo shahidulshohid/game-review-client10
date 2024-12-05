@@ -38,7 +38,7 @@ const Navbar = () => {
     </>
   );
   return (
-    <div className="w-11/12 mx-auto z-50">
+    <div className="w-11/12 mx-auto z-50 sticky top-0">
       <div className="navbar bg-base-100">
         <div className="navbar-start">
           <div className="dropdown z-50">
@@ -73,9 +73,9 @@ const Navbar = () => {
             className="text-lg md:text-2xl font-semibold md:font-bold"
             to="/"
           >
-            <div className="md:flex">
-            <p className="md:mr-2">Game</p>
-            <p>Review</p>
+            <div className="flex items-center">
+            <p className="text-3xl text-pink-500 font-bold">G</p>
+            <p>review</p>
             </div>
           </Link>
         </div>

@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const HeightRatedCame = ({ reviewData }) => {
-  console.log(reviewData);
   const {_id, title, rating, photo } = reviewData;
   return (
     <div>

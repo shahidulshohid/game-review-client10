@@ -5,7 +5,7 @@ import {
   updateProfile,
   onAuthStateChanged,
   signOut,
-  signInWithEmailAndPassword
+  signInWithEmailAndPassword,
 } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
 import { auth } from "../firebase/firebase.confige";
@@ -22,14 +22,14 @@ const AuthProvider = ({ children }) => {
     return createUserWithEmailAndPassword(auth, email, password);
   };
 
-  // handle login 
+  // handle login
   const handleLogin = (email, password) => {
     setLoading(true);
-    return signInWithEmailAndPassword(auth, email, password)
-  } 
+    return signInWithEmailAndPassword(auth, email, password);
+  };
 
   const handleLogout = () => {
-    setLoading(true)
+    setLoading(true);
     return signOut(auth);
   };
 
@@ -40,10 +40,10 @@ const AuthProvider = ({ children }) => {
       photoURL: image,
     });
   };
-  
+
   // loginWithGoogle
   const handleGoogleLogin = () => {
-    setLoading(true)
+    setLoading(true);
     signInWithPopup(auth, googleProvider);
   };
 
@@ -58,19 +58,18 @@ const AuthProvider = ({ children }) => {
     loading,
   };
 
-  useEffect(()=> {
+  useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
-        console.log(currentUser)
-        if(currentUser){
-            setUser(currentUser)
-        }
-        else{
-            setUser(null)
-        }
-        setLoading(false)
-    })
-    return ()=> unSubscribe()
-  }, [])
+      if (currentUser) {
+        setUser(currentUser);
+        console.log(currentUser);
+      } else {
+        setUser(null);
+      }
+      setLoading(false);
+    });
+    return () => unSubscribe();
+  }, []);
   return (
     <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
   );

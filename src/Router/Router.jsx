@@ -9,6 +9,7 @@ import Login from "../Pages/Login/Login"
 import Register from "../Pages/Register/Register"
 import ReviewDetailsPage from "../Pages/ReviewDetailsPage/ReviewDetailsPage";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -32,15 +33,15 @@ const router = createBrowserRouter([
             },
             {
                 path:'/addReviews',
-                element:<AddReviewsPage></AddReviewsPage>
+                element:<PrivateRoute><AddReviewsPage></AddReviewsPage></PrivateRoute>
             },
             {
                 path:'/myReviews',
-                element:<MyReviewsPage></MyReviewsPage>
+                element:<PrivateRoute><MyReviewsPage></MyReviewsPage></PrivateRoute>
             },
             {
                 path:'/gameWatchList',
-                element:<GameWatchListPage></GameWatchListPage>
+                element:<PrivateRoute><GameWatchListPage></GameWatchListPage></PrivateRoute>
             },
             {
                 path:'/login',

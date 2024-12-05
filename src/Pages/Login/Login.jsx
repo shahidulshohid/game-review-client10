@@ -1,10 +1,11 @@
 import { useContext, useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { toast } from "react-toastify";
 const Login = () => {
   const navigate = useNavigate();
+  const location = useLocation()
   const { handleGoogleLogin, handleLogin } = useContext(AuthContext);
   const [showPassword, setShowPassword] = useState(false);
 
@@ -15,16 +16,26 @@ const Login = () => {
     const email = e.target.email.value;
     const password = e.target.password.value;
 
-    handleLogin(email, password).then((res) => {
-      toast.success("Register is successfully", {
+    handleLogin(email, password)
+    .then((res) => {
+      toast.success("Login is successfully", {
         position: "top-center",
       });
-      navigate("/");
+
+      if (location.state) {
+        navigate(location.state.from);
+      } else {
+        navigate("/");
+      }
     });
   };
   const handleGoogleLoginHandler = () => {
-    handleGoogleLogin();
-    navigate("/");
+    handleGoogleLogin()
+    if (location.state) {
+      navigate(location.state.from);
+    } else {
+      navigate("/");
+    }
   };
   return (
     <div className="min-h-screen flex justify-center items-center">
