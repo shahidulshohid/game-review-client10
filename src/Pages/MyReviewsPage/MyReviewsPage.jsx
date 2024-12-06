@@ -7,7 +7,7 @@ const MyReviewsPage = () => {
   const { user } = useContext(AuthContext);
   const data = useLoaderData();
 
-  const [myReviewsData, setMyReviewsData] = useState(null);
+  const [myReviewsData, setMyReviewsData] = useState(data);
 
   useEffect(() => {
     const matchEmailData = data.filter((fil) => fil.email === user?.email);
