@@ -7,7 +7,6 @@ const UpdateMyReviews = () => {
     const { user } = useContext(AuthContext);
     const myUpdateData = useLoaderData()
     const { _id } = myUpdateData
-    console.log(_id)
     
     const handleMyReview = (e) => {
         e.preventDefault()

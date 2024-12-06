@@ -1,14 +1,40 @@
+// import { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
+import Swal from 'sweetalert2'
+// import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 const ReviewDetailsPage = () => {
+  // const {user} = useContext(AuthContext)
   const detailsData = useLoaderData();
   const { photo, title, description, rating, genres, userName, email } =
     detailsData;
+    
+    const watchListData = {photo, title, description, rating, genres, userName, email }
+      const handleAddToWatchList = () => {
+        fetch('http://localhost:8000/watchList', {
+          method:"POST",
+          headers: {
+            'content-type':'application/json'
+          },
+          body:JSON.stringify(watchListData)
+        })
+        .then(res => res.json())
+        .then(data => {
+          if(data.insertedId){
+            Swal.fire({
+              title: 'Success!',
+              text: 'Do you want to continue',
+              icon: 'success',
+              confirmButtonText: 'Yes'
+            })
+          }
+        })
+      }
   return (
     <div className="my-12">
       <div className="lg:w-1/2 mx-auto rounded-xl border-2 p-4">
         <div>
-          <img className="rounded-xl" src={photo} alt="" />
+          <img className="rounded-xl w-full" src={photo} alt="" />
         </div>
         <div>
           <h2 className="card-title my-3">{title}</h2>
@@ -55,7 +81,7 @@ const ReviewDetailsPage = () => {
           </div>
         </div>
         <div>
-        <button className="btn btn-secondary text-lg font-semibold w-full">
+        <button onClick={handleAddToWatchList} className="btn btn-secondary text-lg font-semibold w-full">
           Add to WatchList
         </button>
         </div>
