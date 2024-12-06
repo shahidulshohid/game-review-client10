@@ -1,38 +1,55 @@
-// import { useContext } from "react";
+import { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
 import Swal from 'sweetalert2'
-// import { AuthContext } from "../../AuthProvider/AuthProvider";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 const ReviewDetailsPage = () => {
-  // const {user} = useContext(AuthContext)
+  const {user} = useContext(AuthContext)
   const detailsData = useLoaderData();
   const { photo, title, description, rating, genres, userName, email } =
     detailsData;
     
-    const watchListData = {photo, title, description, rating, genres, userName, email }
+    const watchListData = {
+      photo,
+       title, 
+       description, 
+       rating, 
+       genres, 
+       newName:user?.displayName,
+       newEmail:user?.email,
+      }
       const handleAddToWatchList = () => {
-        fetch('http://localhost:8000/watchList', {
-          method:"POST",
-          headers: {
-            'content-type':'application/json'
-          },
-          body:JSON.stringify(watchListData)
-        })
-        .then(res => res.json())
-        .then(data => {
-          if(data.insertedId){
-            Swal.fire({
-              title: 'Success!',
-              text: 'Do you want to continue',
-              icon: 'success',
-              confirmButtonText: 'Yes'
-            })
-          }
-        })
+        if(user?.email){
+          fetch('http://localhost:8000/watchList', {
+            method:"POST",
+            headers: {
+              'content-type':'application/json'
+            },
+            body:JSON.stringify(watchListData)
+          })
+          .then(res => res.json())
+          .then(data => {
+            if(data.insertedId){
+              Swal.fire({
+                title: 'Success!',
+                text: 'Do you want to continue',
+                icon: 'success',
+                confirmButtonText: 'Yes'
+              })
+            }
+          })
+        }
+        else{
+          Swal.fire({
+            title: 'You have to login for this action',
+            icon: 'error',
+            confirmButtonText: 'Back'
+          })
+        }
       }
   return (
     <div className="my-12">
-      <div className="lg:w-1/2 mx-auto rounded-xl border-2 p-4">
+      <div className="lg:w-1/2 mx-auto rounded-xl border-2 p-4 bg-gray-50">
         <div>
           <img className="rounded-xl w-full" src={photo} alt="" />
         </div>

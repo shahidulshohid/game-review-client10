@@ -50,7 +50,8 @@ const router = createBrowserRouter([
             },
             {
                 path:'/gameWatchList',
-                element:<PrivateRoute><GameWatchListPage></GameWatchListPage></PrivateRoute>
+                element:<PrivateRoute><GameWatchListPage></GameWatchListPage></PrivateRoute>,
+                loader: () => fetch('http://localhost:8000/watchList')
             },
             {
                 path:'/login',

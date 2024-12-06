@@ -4,7 +4,7 @@ import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
 
 const MyReviewTable = ({ reviewData, myReviewsData, setMyReviewsData }) => {
-  const { _id, photo, title, rating, email } = reviewData;
+  const { _id, photo, title, rating, email, genres } = reviewData;
 
   const handleDeleteBtn = (id) => {
     Swal.fire({
@@ -44,7 +44,8 @@ const MyReviewTable = ({ reviewData, myReviewsData, setMyReviewsData }) => {
         <th>
           <img className="w-12 h-12 rounded-lg" src={photo} alt="" />
         </th>
-        <th>{title}</th>
+        <th className="hidden lg:flex">{title}</th>
+        <th>{genres}</th>
         <td className="hidden lg:flex">{email}</td>
         <td>{rating}</td>
         <td className="flex gap-2">
