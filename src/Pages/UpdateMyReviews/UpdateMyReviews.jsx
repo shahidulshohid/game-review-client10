@@ -1,48 +1,52 @@
+import { useLoaderData } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
-import Swal from 'sweetalert2'
+import Swal from "sweetalert2";
 
-const AddReviewsPage = () => {
-  const { user } = useContext(AuthContext);
-
-  const handleAddReview = (e) => {
-    e.preventDefault()
-    const form = e.target
-    const photo = form.photo.value 
-    const title = form.title.value 
-    const description = form.description.value
-    const rating = parseInt(form.rating.value )
-    const sal = parseInt(form.sal.value )
-    const genres = form.genres.value
-    const email = form.email.value 
-    const userName = form.userName.value 
-    const AddReviewData = {photo, title, description, rating, sal, genres, email, userName}
-
-    // send to the server 
-    fetch('http://localhost:8000/addReviews', {
-      method:'POST',
-      headers: {
-        'content-type' : 'application/json'
-      },
-      body:JSON.stringify(AddReviewData)
-    })
-    .then(res => res.json())
-    .then(data => {
-      if(data.insertedId){
-        Swal.fire({
-          title: 'Add Reviews Successfully!',
-          text: 'Do you want to continue',
-          icon: 'success',
-          confirmButtonText: 'Yes'
+const UpdateMyReviews = () => {
+    const { user } = useContext(AuthContext);
+    const myUpdateData = useLoaderData()
+    const { _id } = myUpdateData
+    console.log(_id)
+    
+    const handleMyReview = (e) => {
+        e.preventDefault()
+        const form = e.target
+        const photo = form.photo.value 
+        const title = form.title.value 
+        const description = form.description.value
+        const rating = parseInt(form.rating.value )
+        const sal = parseInt(form.sal.value )
+        const genres = form.genres.value
+        const email = form.email.value 
+        const userName = form.userName.value 
+        const allReviewData = {photo, title, description, rating, sal, genres, email, userName}
+    
+        // send to the server 
+        fetch(`http://localhost:8000/allReviews/${_id}`, {
+          method:'PUT',
+          headers: {
+            'content-type' : 'application/json'
+          },
+          body:JSON.stringify(allReviewData)
+        })
+        .then(res => res.json())
+        .then(data => {
+          if(data.modifiedCount > 0){
+            Swal.fire({
+              title: 'Update Reviews Successfully!',
+              text: 'Do you want to continue',
+              icon: 'success',
+              confirmButtonText: 'Yes'
+            })
+          }
         })
       }
-    })
-  }
     return (
         <div>
       <div className="bg-[#F4F3F0] p-6 lg:p-12 my-12 rounded-xl">
-        <h2 className="text-3xl text-center font-bold">Add New Review</h2>
-        <form onSubmit={handleAddReview}>
+        <h2 className="text-3xl text-center font-bold">Edit MY Review</h2>
+        <form onSubmit={handleMyReview}>
             {/* first row */}
           <div className="md:flex gap-6">
             <div className="form-control w-full md:w-1/2">
@@ -181,5 +185,4 @@ const AddReviewsPage = () => {
     );
 };
 
-export default AddReviewsPage;
-
+export default UpdateMyReviews;

@@ -1,6 +1,8 @@
 import { MdDeleteOutline } from "react-icons/md";
 import { FaRegEdit } from "react-icons/fa";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
+
 const MyReviewTable = ({ reviewData, myReviewsData, setMyReviewsData }) => {
   const { _id, photo, title, rating, email } = reviewData;
 
@@ -15,7 +17,6 @@ const MyReviewTable = ({ reviewData, myReviewsData, setMyReviewsData }) => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-
         fetch(`http://localhost:8000/allReviews/${id}`, {
           method: "DELETE",
         })
@@ -47,9 +48,11 @@ const MyReviewTable = ({ reviewData, myReviewsData, setMyReviewsData }) => {
         <td className="hidden lg:flex">{email}</td>
         <td>{rating}</td>
         <td className="flex gap-2">
-          <button className="bg-pink-500 px-2 py-1 md:px-4 md:py-2 rounded text-white lg:text-lg">
-            <FaRegEdit />
-          </button>
+          <Link to={`/updateMyReviews/${_id}`}>
+            <button className="bg-pink-500 px-2 py-1 md:px-4 md:py-2 rounded text-white lg:text-lg">
+              <FaRegEdit />
+            </button>
+          </Link>
           <button
             onClick={() => {
               handleDeleteBtn(_id);

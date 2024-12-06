@@ -10,6 +10,7 @@ import Register from "../Pages/Register/Register"
 import ReviewDetailsPage from "../Pages/ReviewDetailsPage/ReviewDetailsPage";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import UpdateMyReviews from "../Pages/UpdateMyReviews/UpdateMyReviews";
 
 const router = createBrowserRouter([
     {
@@ -40,6 +41,12 @@ const router = createBrowserRouter([
                 path:'/myReviews',
                 element:<PrivateRoute><MyReviewsPage></MyReviewsPage></PrivateRoute>,
                 loader: ()=> fetch('http://localhost:8000/allReviews')
+            },
+            {
+                path:'/updateMyReviews/:id',
+                element:<UpdateMyReviews></UpdateMyReviews>,
+                loader: ({params}) => fetch(`http://localhost:8000/allReviews/${params.id}`)
+
             },
             {
                 path:'/gameWatchList',
