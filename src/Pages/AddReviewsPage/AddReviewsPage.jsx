@@ -98,7 +98,6 @@ const AddReviewsPage = () => {
                 <option value='7'>7</option>
                 <option value='8'>8</option>
                 <option value='9'>9</option>
-                <option value='1'>10</option>
               </select>
             </div>
           </div>
@@ -108,23 +107,13 @@ const AddReviewsPage = () => {
               <label className="label">
                 <span className="label-text font-bold">Publishing year</span>
               </label>
-              <select className="input input-bordered " name="sal" id="sal">
-                <option value="2115">2010</option>
-                <option value="2115">2011</option>
-                <option value="2115">2012</option>
-                <option value="2115">2013</option>
-                <option value="2115">2014</option>
-                <option value="2115">2015</option>
-                <option value="2016">2016</option>
-                <option value="2017">2017</option>
-                <option value="2018">2018</option>
-                <option value="2019">2019</option>
-                <option value="2020">2020</option>
-                <option value="2021">2021</option>
-                <option value="2022">2022</option>
-                <option value="2023">2023</option>
-                <option value="2024">2024</option>
-              </select>
+              <input
+                type="number"
+                name="sal"
+                placeholder="Publishing year"
+                className="input input-bordered"
+                required
+              />
             </div>
             <div className="form-control w-full md:w-1/2">
               <label className="label">

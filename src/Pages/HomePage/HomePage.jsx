@@ -3,6 +3,7 @@ import Banner from "../../components/Banner/Banner";
 import HeightRatedCame from "../../components/HeightRatedGame/HeightRatedCame";
 import { Typewriter } from 'react-simple-typewriter'
 import OurServices from "../../components/OurServices/OurServices";
+import GetTouchWithUs from "../../components/GetTouchWithUs/GetTouchWithUs";
 
 const HomePage = () => {
   const addReviewsData = useLoaderData();
@@ -35,6 +36,7 @@ const HomePage = () => {
         ))}
       </div>
       <OurServices></OurServices>
+      <GetTouchWithUs></GetTouchWithUs>
     </div>
   );
 };

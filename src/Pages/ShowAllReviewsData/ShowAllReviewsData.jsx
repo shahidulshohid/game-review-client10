@@ -10,7 +10,7 @@ const ShowAllReviewsData = ({ review }) => {
         </figure>
         <div className="card-body">
           <h2 className="card-title">{title}</h2>
-          <h2 className="text-xl">{genres}</h2>
+          <h2 className="text-xl">Genres: {genres}</h2>
           <h3 className="text-lg">Publishing Year: {sal}</h3>
           <div className="flex justify-between mb-2">
             <p className="text-xl">Rating: {rating}</p>

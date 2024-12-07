@@ -1,9 +1,10 @@
 import { useContext } from "react";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import Swal from 'sweetalert2'
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 const ReviewDetailsPage = () => {
+  const navigate = useNavigate()
   const {user} = useContext(AuthContext)
   const detailsData = useLoaderData();
   const { photo, title, description, rating, genres, userName, email } =
@@ -45,6 +46,7 @@ const ReviewDetailsPage = () => {
             icon: 'error',
             confirmButtonText: 'Back'
           })
+          navigate('/login')
         }
       }
   return (
