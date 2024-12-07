@@ -109,7 +109,12 @@ const AddReviewsPage = () => {
                 <span className="label-text font-bold">Publishing year</span>
               </label>
               <select className="input input-bordered " name="sal" id="sal">
-                <option value="2115">2115</option>
+                <option value="2115">2010</option>
+                <option value="2115">2011</option>
+                <option value="2115">2012</option>
+                <option value="2115">2013</option>
+                <option value="2115">2014</option>
+                <option value="2115">2015</option>
                 <option value="2016">2016</option>
                 <option value="2017">2017</option>
                 <option value="2018">2018</option>
