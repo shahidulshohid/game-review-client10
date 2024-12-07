@@ -19,7 +19,7 @@ const MyReviewsPage = () => {
       <h3 className="text-4xl text-center font-bold mb-6 text-pink-500">
         My Reviews
       </h3>
-      <div className="bg-[#F4F3F0] rounded-xl py-6">
+      <div className="bg-[#F4F3F0] rounded-xl py-6 lg:w-10/12 mx-auto">
         <div className="overflow-x-auto ">
           <table className="table">
             {/* head */}

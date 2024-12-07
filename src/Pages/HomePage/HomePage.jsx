@@ -2,6 +2,7 @@ import { useLoaderData } from "react-router-dom";
 import Banner from "../../components/Banner/Banner";
 import HeightRatedCame from "../../components/HeightRatedGame/HeightRatedCame";
 import { Typewriter } from 'react-simple-typewriter'
+import OurServices from "../../components/OurServices/OurServices";
 
 const HomePage = () => {
   const addReviewsData = useLoaderData();
@@ -16,7 +17,7 @@ const HomePage = () => {
         <span style={{ color: "red", fontWeight: "bold" }}>
           <Typewriter
             words={["Action", "Adventure", "Shooter", "Sports", "Fighting", "Racing", "Puzzle", "RPG", "Simulation", "Survival!"]}
-            loop={5}
+            loop={10}
             cursor
             cursorStyle="|"
             typeSpeed={70}
@@ -33,6 +34,7 @@ const HomePage = () => {
           ></HeightRatedCame>
         ))}
       </div>
+      <OurServices></OurServices>
     </div>
   );
 };
