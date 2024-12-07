@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 const ShowAllReviewsData = ({ review }) => {
-  const { _id, photo, title, rating, sal } = review;
+  const { _id, photo, title, rating, sal, genres } = review;
   return (
     <div>
       <div className="card bg-green-100 border-2">
@@ -10,6 +10,7 @@ const ShowAllReviewsData = ({ review }) => {
         </figure>
         <div className="card-body">
           <h2 className="card-title">{title}</h2>
+          <h2 className="text-xl">{genres}</h2>
           <h3 className="text-lg">Publishing Year: {sal}</h3>
           <div className="flex justify-between mb-2">
             <p className="text-xl">Rating: {rating}</p>

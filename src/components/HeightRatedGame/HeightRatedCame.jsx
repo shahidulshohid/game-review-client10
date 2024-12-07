@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const HeightRatedCame = ({ reviewData }) => {
-  const {_id, title, rating, photo } = reviewData;
+  const {_id, title, rating, photo, genres } = reviewData;
   return (
     <div>
       <div className="card bg-base-100 border-2">
@@ -11,8 +11,9 @@ const HeightRatedCame = ({ reviewData }) => {
         </figure>
         <div className="card-body">
           <h2 className="card-title">{title}</h2>
+          <h2 className="text-xl">{genres}</h2>
           <div className="flex justify-between mb-2">
-            <p className="text-xl font-semibold">Rating: {rating}</p>
+            <p className="text-xl">Rating: {rating}</p>
             <div className="rating">
               <input
                 type="radio"
