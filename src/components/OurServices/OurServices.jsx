@@ -80,7 +80,7 @@ const OurServices = () => {
         </div>
         <Fade direction="right">
         <div>
-          <img className="max-h-96 mx-auto" src={simulationImg} alt="" />
+          <img className="max-h-96 mx-auto rounded-xl" src={simulationImg} alt="" />
         </div>
         </Fade>
       </div>

@@ -6,8 +6,9 @@ const FooterPage = () => {
         <div className="my-12 bg-pink-300 w-11/12 mx-auto rounded-xl">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 px-5 py-8 gap-6">
                 <div>
-                    <div>
+                    <div className="flex gap-2 items-center">
                         <img className="w-10 h-10 md:w-12 md:h-12 rounded-full" src={logo} alt="logo" />
+                        <h1 className="hidden md:flex text:xl lg:text-2xl font-bold">Chill Gamer</h1>
                     </div>
 
                     <p className="text-sm font-semibold text-gray-800 my-3">Explore the vibrant world of game development with your ultimate destination for innovative games and industry insights. </p>

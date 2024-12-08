@@ -4,7 +4,7 @@ import FooterPage from "../Pages/FooterPage/FooterPage";
 
 const MainLayout = () => {
     return (
-        <div className=" dark:bg-gray-900 pb-12">
+        <div className=" bg-gray-800 dark:bg-gray-900 pb-12">
             <Navbar></Navbar>
             <div className="w-11/12 mx-auto">
             <Outlet></Outlet>

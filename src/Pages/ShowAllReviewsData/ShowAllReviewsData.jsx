@@ -4,7 +4,7 @@ const ShowAllReviewsData = ({ review }) => {
   const { _id, photo, title, rating, sal, genres } = review;
   return (
     <div>
-      <div className="card bg-green-100 border-2">
+      <div className="card bg-white border-2">
         <figure className="px-5 pt-5">
           <img src={photo} alt="" className="rounded-xl h-[280px]" />
         </figure>

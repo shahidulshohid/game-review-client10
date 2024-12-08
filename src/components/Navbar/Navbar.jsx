@@ -74,8 +74,9 @@ const Navbar = () => {
             className="text-lg md:text-2xl font-semibold md:font-bold"
             to="/"
           >
-            <div>
+            <div className="flex gap-2 items-center">
               <img className="w-10 h-10 md:w-12 md:h-12 rounded-full" src={logo} alt="logo" />
+              <h1 className="hidden md:flex text:xl lg:text-3xl font-bold text-pink-500">Chill Gamer</h1>
             </div>
           </Link>
         </div>

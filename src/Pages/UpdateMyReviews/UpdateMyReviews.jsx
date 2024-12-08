@@ -169,7 +169,7 @@ const UpdateMyReviews = () => {
           {/* End of Labels */}
           <input
             type="submit"
-            value="Submit Review"
+            value="Update Review"
             className="btn w-full bg-pink-500 text-white mt-6 text-xl font-semibold"
           />
         </form>

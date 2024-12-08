@@ -31,7 +31,7 @@ const AllReviewsPage = () => {
   };
 
   return (
-    <div className=" my-12 text-pink-500">
+    <div className=" my-12">
       <div className="flex justify-center items-center mb-6 gap-2 md:gap-12">
         <div className="dropdown dropdown-hover">
           <div
@@ -57,7 +57,7 @@ const AllReviewsPage = () => {
           </ul>
         </div>
         <Fade direction="up">
-        <h3 className="text-xl md:text-3xl font-bold">All Reviews</h3>
+        <h3 className="text-xl md:text-3xl font-bold text-white">All Reviews</h3>
         </Fade>
         <div className="dropdown dropdown-hover">
           <div
