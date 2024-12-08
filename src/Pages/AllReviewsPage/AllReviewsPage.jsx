@@ -18,6 +18,10 @@ const AllReviewsPage = () => {
     setAllData([...sortedData]);
   };
 
+  const handleAllData = () => {
+    setAllData([...allReviewsData])
+  }
+
   // created array for filter menu 
   const arrayForFilter = ["Action", "Adventure", "Shooter", "Sports", "Fighting", "Racing", "Puzzle", "RPG", "Simulation", "Survival"]
 
@@ -32,7 +36,7 @@ const AllReviewsPage = () => {
 
   return (
     <div className=" my-12">
-      <div className="flex justify-center items-center mb-6 gap-2 md:gap-12">
+      <div className="flex justify-center md:justify-center items-center mb-6 gap-2 md:gap-12">
         <div className="dropdown dropdown-hover">
           <div
             tabIndex={0}
@@ -56,9 +60,9 @@ const AllReviewsPage = () => {
             ))}
           </ul>
         </div>
-        <Fade direction="up">
-        <h3 className="text-xl md:text-3xl font-bold text-white">All Reviews</h3>
-        </Fade>
+        <div>
+        <button onClick={handleAllData} className="text-pink-500 bg-white btn text-xl font-semibold border-green-500 border-2">All Game </button>
+        </div>
         <div className="dropdown dropdown-hover">
           <div
             tabIndex={0}
