@@ -9,26 +9,26 @@ const GetTouchWithUs = () => {
                 type="text"
                 name="sal"
                 placeholder="Name"
-                className="input input-bordered bg-green-100"
+                className="input input-bordered"
                 required
               />
             <input
                 type="email"
                 name="sal"
                 placeholder="Email"
-                className="input input-bordered bg-green-100"
+                className="input input-bordered"
                 required
               />
             <input
                 type="number"
                 name="sal"
                 placeholder="Phone"
-                className="input input-bordered bg-green-100"
+                className="input input-bordered"
                 required
               />
            </div>
            <div>
-            <textarea className="input input-bordered w-full h-28 my-5 bg-green-100" placeholder="Message"></textarea>
+            <textarea className="input input-bordered w-full h-28 my-5" placeholder="Message"></textarea>
            </div>
            <div className=" text-center">
             <button className="btn border-none text-xl text-white bg-pink-500">Join Now</button>

@@ -17,7 +17,7 @@ const MyReviewTable = ({ reviewData, myReviewsData, setMyReviewsData }) => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:8000/allReviews/${id}`, {
+        fetch(`https://game-review-server-umber.vercel.app/allReviews/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

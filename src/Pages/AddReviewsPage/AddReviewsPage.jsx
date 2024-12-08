@@ -19,7 +19,7 @@ const AddReviewsPage = () => {
     const AddReviewData = {photo, title, description, rating, sal, genres, email, userName}
 
     // send to the server 
-    fetch('http://localhost:8000/addReviews', {
+    fetch('https://game-review-server-umber.vercel.app/addReviews', {
       method:'POST',
       headers: {
         'content-type' : 'application/json'

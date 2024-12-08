@@ -21,17 +21,17 @@ const router = createBrowserRouter([
             {
                 path:'/',
                 element:<HomePage></HomePage>,
-                loader: ()=> fetch('http://localhost:8000/addReviews')
+                loader: ()=> fetch('https://game-review-server-umber.vercel.app/addReviews')
             },
             {
                 path:'/review/:id',
                 element:<ReviewDetailsPage></ReviewDetailsPage>,
-                loader: ({params}) => fetch(`http://localhost:8000/addReviews/${params.id}`)
+                loader: ({params}) => fetch(`https://game-review-server-umber.vercel.app/addReviews/${params.id}`)
             },
             {
                 path:'/allReviews',
                 element:<ALLReviewsPage></ALLReviewsPage>,
-                loader: ()=> fetch('http://localhost:8000/allReviews')
+                loader: ()=> fetch('https://game-review-server-umber.vercel.app/allReviews')
             },
             {
                 path:'/addReviews',
@@ -40,18 +40,18 @@ const router = createBrowserRouter([
             {
                 path:'/myReviews',
                 element:<PrivateRoute><MyReviewsPage></MyReviewsPage></PrivateRoute>,
-                loader: ()=> fetch('http://localhost:8000/allReviews')
+                loader: ()=> fetch('https://game-review-server-umber.vercel.app/allReviews')
             },
             {
                 path:'/updateMyReviews/:id',
                 element:<UpdateMyReviews></UpdateMyReviews>,
-                loader: ({params}) => fetch(`http://localhost:8000/allReviews/${params.id}`)
+                loader: ({params}) => fetch(`https://game-review-server-umber.vercel.app/allReviews/${params.id}`)
 
             },
             {
                 path:'/gameWatchList',
                 element:<PrivateRoute><GameWatchListPage></GameWatchListPage></PrivateRoute>,
-                loader: () => fetch('http://localhost:8000/watchList')
+                loader: () => fetch('https://game-review-server-umber.vercel.app/watchList')
             },
             {
                 path:'/login',

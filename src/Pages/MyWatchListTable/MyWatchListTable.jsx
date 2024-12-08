@@ -6,7 +6,7 @@ const MyWatchListTable = ({ listData, watchListData, setWatchListData }) => {
   const { _id, photo, title, genres, newEmail, rating } = listData;
 
   const handleWatchList = (id) => {
-    fetch(`http://localhost:8000/watchList/${id}`, {
+    fetch(`https://game-review-server-umber.vercel.app/watchList/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

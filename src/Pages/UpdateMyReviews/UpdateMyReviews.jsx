@@ -22,7 +22,7 @@ const UpdateMyReviews = () => {
         const allReviewData = {photo, title, description, rating, sal, genres, email, userName}
     
         // send to the server 
-        fetch(`http://localhost:8000/allReviews/${_id}`, {
+        fetch(`https://game-review-server-umber.vercel.app/allReviews/${_id}`, {
           method:'PUT',
           headers: {
             'content-type' : 'application/json'

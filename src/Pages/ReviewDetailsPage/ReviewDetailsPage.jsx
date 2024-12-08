@@ -21,7 +21,7 @@ const ReviewDetailsPage = () => {
       }
       const handleAddToWatchList = () => {
         if(user?.email){
-          fetch('http://localhost:8000/watchList', {
+          fetch('https://game-review-server-umber.vercel.app/watchList', {
             method:"POST",
             headers: {
               'content-type':'application/json'
