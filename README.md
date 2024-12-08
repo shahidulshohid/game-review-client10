@@ -1,7 +1,7 @@
 - ** I mentioned something about my project here **:
   - Assignment Category:Camellia.
   - My project name is: A Game Review Application.
-  - MY project live link: 
+  - MY project live link: https://b10-assignment-10.firebaseapp.com/
 
   - ** A brief description some key feature of my project:
   - I am explain here some key of my project like... I have added dark and light mode on the top.
