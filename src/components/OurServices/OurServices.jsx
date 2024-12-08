@@ -89,7 +89,3 @@ const OurServices = () => {
 };
 
 export default OurServices;
-
-<div className="-mb-5 text-center lg:text-left">
-  <h3 className="text-xl font-bold mb-1">Take all advantage from here</h3>
-</div>;

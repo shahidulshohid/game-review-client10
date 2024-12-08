@@ -31,7 +31,7 @@ const GetTouchWithUs = () => {
             <textarea className="input input-bordered w-full h-28 my-5" placeholder="Message"></textarea>
            </div>
            <div className=" text-center">
-            <button className="btn border-none text-xl text-white bg-pink-500">Join Now</button>
+            <button className="btn border-none text-xl text-white hover:text-black bg-pink-500">Join Now</button>
            </div>
             </form>
         </div>
