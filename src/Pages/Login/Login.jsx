@@ -27,7 +27,13 @@ const Login = () => {
       } else {
         navigate("/");
       }
+    })
+    .catch((error) => {
+      toast.error(error.code, {
+        position: "top-center",
+      });
     });
+
   };
   const handleGoogleLoginHandler = () => {
     handleGoogleLogin()

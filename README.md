@@ -1,6 +1,6 @@
 - ** I mentioned something about my project here **:
   - Assignment Category:Camellia.
-  - My project name is: A Game Review Application.
+  - My project name is: Chill Gamer: A Game Review Application.
   - MY project live link: https://b10-assignment-10.firebaseapp.com/
 
   - ** A brief description some key feature of my project:
