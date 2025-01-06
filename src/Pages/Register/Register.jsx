@@ -9,7 +9,7 @@ const Register = () => {
   const { handleRegister, manageProfile, setUser } = useContext(AuthContext);
   const [showPassword, setShowPassword] = useState(false);
 
-  // handle register
+  // handle register 
   const handleSubmit = (e) => {
     e.preventDefault();
 

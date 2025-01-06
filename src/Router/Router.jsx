@@ -11,6 +11,8 @@ import ReviewDetailsPage from "../Pages/ReviewDetailsPage/ReviewDetailsPage";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import UpdateMyReviews from "../Pages/UpdateMyReviews/UpdateMyReviews";
+import ProjectsPage from "../Pages/ProjectsPage/ProjectsPage";
+import AboutPage from "../Pages/AboutPage/AboutPage";
 
 const router = createBrowserRouter([
     {
@@ -60,7 +62,15 @@ const router = createBrowserRouter([
             {
                 path:'/register',
                 element:<Register></Register>
-            }
+            },
+            {
+                path:'/projects',
+                element:<ProjectsPage></ProjectsPage>
+            },
+           {
+            path:'/about',
+            element:<AboutPage></AboutPage>
+           }
         ]
     }
 ])

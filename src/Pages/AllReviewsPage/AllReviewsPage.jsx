@@ -41,7 +41,7 @@ const AllReviewsPage = () => {
           <div
             tabIndex={0}
             role="button"
-            className="btn m-1 text-xl text-pink-500 border-2 border-green-500"
+            className="btn m-1 text-xl text-black border-2 border-green-500"
           >
             Filter
           </div>
@@ -61,13 +61,13 @@ const AllReviewsPage = () => {
           </ul>
         </div>
         <div>
-        <button onClick={handleAllData} className="text-pink-500 bg-white btn text-xl font-semibold border-green-500 border-2">All Game </button>
+        <button onClick={handleAllData} className="text-black bg-white btn text-xl font-semibold border-green-500 border-2">All Game </button>
         </div>
         <div className="dropdown dropdown-hover">
           <div
             tabIndex={0}
             role="button"
-            className="btn m-1 text-xl text-pink-500 border-2 border-green-500"
+            className="btn m-1 text-xl text-black border-2 border-green-500"
           >
             Sorted
           </div>

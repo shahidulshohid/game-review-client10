@@ -12,7 +12,7 @@ import "swiper/css/navigation";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 const Banner = () => {
   return (
-    <div className="mt-12">
+    <div>
       <Swiper
         spaceBetween={30}
         centeredSlides={true}
@@ -29,7 +29,7 @@ const Banner = () => {
       >
         <SwiperSlide>
           <div
-            className="flex justify-center items-center rounded-xl"
+            className="flex justify-center items-center"
             style={{
               backgroundImage: `url(${bannerImg1})`,
               height: "380px",
@@ -58,7 +58,7 @@ const Banner = () => {
         </SwiperSlide>
         <SwiperSlide>
           <div
-            className="flex justify-center items-center rounded-xl"
+            className="flex justify-center items-center "
             style={{
               backgroundImage: `url(${bannerImg2})`,
               height: "380px",
@@ -83,7 +83,7 @@ const Banner = () => {
         </SwiperSlide>
         <SwiperSlide>
           <div
-            className="flex justify-center items-center rounded-xl"
+            className="flex justify-center items-center"
             style={{
               backgroundImage: `url(${bannerImg3})`,
               height: "380px",
@@ -108,7 +108,7 @@ const Banner = () => {
         </SwiperSlide>
         <SwiperSlide>
           <div
-            className="flex justify-center items-center rounded-xl"
+            className="flex justify-center items-center"
             style={{
               backgroundImage: `url(${bannerImg4})`,
               height: "380px",
@@ -133,7 +133,7 @@ const Banner = () => {
         </SwiperSlide>
         <SwiperSlide>
           <div
-            className="flex justify-center items-center rounded-xl"
+            className="flex justify-center items-center"
             style={{
               backgroundImage: `url(${bannerImg5})`,
               height: "380px",

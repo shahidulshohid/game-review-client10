@@ -2,7 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 import { CiLight, CiDark } from "react-icons/ci";
-import logo from '../../assets/logo.jpg'
+import logo from "../../assets/logo.jpg";
 
 const Navbar = () => {
   const { user, handleLogout } = useContext(AuthContext);
@@ -21,26 +21,38 @@ const Navbar = () => {
 
   const links = (
     <>
-      <li className="text-lg font-semibold mx-2 mt-2">
+      <li className="text-lg font-semibold mx-2">
         <NavLink to="/">Home</NavLink>
       </li>
-      <li className="text-lg font-semibold mx-2 mt-2">
+      <li className="text-lg font-semibold mx-2">
+        <NavLink to="/about">About Us</NavLink>
+      </li>
+      <li className="text-lg font-semibold mx-2">
         <NavLink to="/allReviews">All Reviews</NavLink>
       </li>
-      <li className="text-lg font-semibold mx-2 mt-2">
-        <NavLink to="/addReviews">Add Review</NavLink>
+      <li className="text-lg font-semibold mx-2">
+        <NavLink to="/projects">Projects</NavLink>
       </li>
-      <li className="text-lg font-semibold mx-2 mt-2">
-        <NavLink to="/myReviews">My Reviews</NavLink>
-      </li>
-      <li className="text-lg font-semibold mx-2 mt-2">
-        <NavLink to="/gameWatchList">My WatchList</NavLink>
-      </li>
+      {user && (
+        <li className="text-lg font-semibold">
+          <NavLink to="/addReviews">Add Review</NavLink>
+        </li>
+      )}
+      {user && (
+        <li className="text-lg font-semibold">
+          <NavLink to="/myReviews">My Reviews</NavLink>
+        </li>
+      )}
+      {user && (
+        <li className="text-lg font-semibold">
+          <NavLink to="/gameWatchList">My WatchList</NavLink>
+        </li>
+      )}
     </>
   );
   return (
     <div className="w-11/12 mx-auto mt-2 z-50 sticky top-0">
-      <div className="navbar bg-yellow-50">
+      <div className="navbar bg-white md:px-5">
         <div className="navbar-start">
           <div className="dropdown z-50">
             <div
@@ -75,8 +87,14 @@ const Navbar = () => {
             to="/"
           >
             <div className="flex gap-2 items-center">
-              <img className="w-10 h-10 md:w-12 md:h-12 rounded-full" src={logo} alt="logo" />
-              <h1 className="hidden md:flex text:xl lg:text-3xl font-bold text-pink-500">Chill Gamer</h1>
+              <img
+                className="w-10 h-10 md:w-12 md:h-12 rounded-full"
+                src={logo}
+                alt="logo"
+              />
+              <h1 className="hidden lg:flex text:xl lg:text-2xl font-bold text-pink-500">
+                Chill Gamer
+              </h1>
             </div>
           </Link>
         </div>
