@@ -34,17 +34,17 @@ const Navbar = () => {
         <NavLink to="/projects">Projects</NavLink>
       </li>
       {user && (
-        <li className="text-lg font-semibold">
+        <li className="text-lg font-semibold lg:hidden">
           <NavLink to="/addReviews">Add Review</NavLink>
         </li>
       )}
       {user && (
-        <li className="text-lg font-semibold">
+        <li className="text-lg font-semibold lg:hidden">
           <NavLink to="/myReviews">My Reviews</NavLink>
         </li>
       )}
       {user && (
-        <li className="text-lg font-semibold">
+        <li className="text-lg font-semibold lg:hidden">
           <NavLink to="/gameWatchList">My WatchList</NavLink>
         </li>
       )}
@@ -92,8 +92,8 @@ const Navbar = () => {
                 src={logo}
                 alt="logo"
               />
-              <h1 className="hidden lg:flex text:xl lg:text-2xl font-bold text-pink-500">
-                Chill Gamer
+              <h1 className="hidden lg:flex lg:text-2xl font-bold text-pink-500">
+                Chilli Gamer
               </h1>
             </div>
           </Link>
@@ -117,14 +117,39 @@ const Navbar = () => {
                 </p>
               )}
             </button>
-            <div className="avatar">
-              <div
-                title={user?.displayName}
-                className="w-10 md:w-12 rounded-full"
-              >
-                {user && <img src={user?.photoURL} />}
+            <div className="dropdown dropdown-hover">
+              <div tabIndex={0} role="button" className=" m-1">
+                <div className="avatar">
+                  <div
+                    title={user?.displayName}
+                    className="w-10 md:w-12 rounded-full"
+                  >
+                    {user && <img src={user?.photoURL} />}
+                  </div>
+                </div>
               </div>
+              <ul
+                tabIndex={0}
+                className="dropdown-content menu bg-base-100 rounded-box z-[1] w-52 p-2 shadow right-0 hidden lg:flex"
+              >
+                {user && (
+                  <li className="text-lg font-semibold">
+                    <NavLink to="/addReviews">Add Review</NavLink>
+                  </li>
+                )}
+                {user && (
+                  <li className="text-lg font-semibold my-2">
+                    <NavLink to="/myReviews">My Reviews</NavLink>
+                  </li>
+                )}
+                {user && (
+                  <li className="text-lg font-semibold">
+                    <NavLink to="/gameWatchList">My WatchList</NavLink>
+                  </li>
+                )}
+              </ul>
             </div>
+
             {user ? (
               <NavLink
                 onClick={handleLogout}
@@ -157,17 +182,3 @@ const Navbar = () => {
 
 export default Navbar;
 
-{
-  /* <Link
-              className="text-sm md:text-lg font-semibold border-2 border-green-500 p-2 rounded-lg"
-              to="/login"
-            >
-              Login
-            </Link>
-            <Link
-              className="text-sm md:text-lg font-semibold border-2 border-green-500 p-2 rounded-lg"
-              to="/register"
-            >
-              Register
-            </Link> */
-}
