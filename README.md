@@ -6,7 +6,7 @@
   - MY project live link: https://b10-assignment-10.firebaseapp.com/
 
   - ** A brief description some key feature of my project:
-  - I am explain here some key of my project like... I have added dark and light mode on the top.
+  - I am explain here some key feature of my project like... I have added dark and light mode on the top.
   - And added authentication system to use firebase.
   - and added add reviews form so that user can add product by this form.
   - and added a details button. User can see details about a specific product and also can add  the specific product by add to watch list button.
