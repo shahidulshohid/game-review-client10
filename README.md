@@ -23,7 +23,6 @@
   
   - ** All Dependencies
     - "match-sorter": "^8.0.0",
-    - "react": "^18.3.1",
     - "react-awesome-reveal": "^4.2.14",
     - "react-datepicker": "^7.5.0",
     - "react-dom": "^18.3.1",
